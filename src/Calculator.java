@@ -1,14 +1,14 @@
 public class Calculator {
 
-    public int divide(int a, int b) {
+    public int divide(int a, int b) throws ArithmeticException {
 
-        try {
-            return a / b;
-        } catch (ArithmeticException e) {
-            System.out.println("Error: Cannot divide by zero!");
-            return 0;
+        if (b == 0) {
+            throw new ArithmeticException(
+                    "Division by zero is not allowed!"
+            );
         }
 
+        return a / b;
     }
 
 }
